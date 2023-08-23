@@ -25,8 +25,8 @@ export default {
       this.answer = 'Pensando...'
       const data = await fetch('https://yesno.wtf/api').then(res => res.json());
       this.image = data.image
-      this.answer = data.answer
-      this.oldQuestion= this.question
+      this.answer = data.answer === 'yes' ? 'Si' : data.answer;
+      this.oldQuestion = this.question
     },
 
   },
